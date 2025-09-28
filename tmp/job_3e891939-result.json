@@ -1,0 +1,31 @@
+{
+  "layout": {
+    "clusters": [
+      {
+        "cluster_id": 1,
+        "title": "Bảng cân đối kế toán hợp nhất",
+        "start_page": 9,
+        "end_page": 11
+      },
+      {
+        "cluster_id": 2,
+        "title": "Báo cáo kết quả hoạt động kinh doanh hợp nhất",
+        "start_page": 12,
+        "end_page": 13
+      },
+      {
+        "cluster_id": 3,
+        "title": "Báo cáo lưu chuyển tiền tệ hợp nhất",
+        "start_page": 14,
+        "end_page": 15
+      },
+      {
+        "cluster_id": 4,
+        "title": "Thuyết minh báo cáo tài chính hợp nhất",
+        "start_page": 16,
+        "end_page": 30
+      }
+    ]
+  },
+  "job_id": "job_3e891939"
+}
