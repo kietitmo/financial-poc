@@ -1,6 +1,6 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse, FileResponse
-from infrastructure.job_manager_redis import JobManagerRedis
+from services.async_service.job_manager_redis import JobManagerRedis
 from application.tasks import process_pdf_task
 import os
 
@@ -36,3 +36,16 @@ def download_result(job_id: str):
     if not result_path or not os.path.exists(result_path):
         raise HTTPException(status_code=404, detail="result not ready")
     return FileResponse(result_path, media_type="application/json", filename=f"{job_id}-result.json")
+
+@router.post("/ocr")
+async def ocr_pdf(file: UploadFile = File(...)):
+    from services.ocr.ocr_tesseract import OcrTesseract
+    ocr = OcrTesseract()
+    
+    if not file.filename.lower().endswith('.pdf'):
+        raise HTTPException(status_code=400, detail="Only PDF supported")
+    job = job_mgr.create_job(file.filename)
+    data = await file.read()
+    file_path = job_mgr.save_file(job.job_id, data)
+    pages = ocr.ocr_pdf(file_path)
+    return pages

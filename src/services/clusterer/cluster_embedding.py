@@ -1,7 +1,7 @@
 from sentence_transformers import SentenceTransformer
 import hdbscan
 from typing import List
-from domain.iclusterer import IClusterer
+from services.clusterer.iclusterer import IClusterer
 
 class EmbeddingClusterer(IClusterer):
     def __init__(self, model_name: str = "all-MiniLM-L6-v2"):

@@ -1,7 +1,7 @@
-from domain.iocr_service import IOcrService
-from domain.iai_client import IAIClient
-from domain.iclusterer import IClusterer
-from domain.iindexer import IIndexer
+from services.ocr.iocr_service import IOcrService
+from services.ai_client.iai_client import IAIClient
+from services.clusterer.iclusterer import IClusterer
+from services.indexer.iindexer import IIndexer
 from utils.logger import get_logger
 
 logger = get_logger(__name__)

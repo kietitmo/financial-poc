@@ -1,5 +1,5 @@
 from elasticsearch import Elasticsearch
-from domain.iindexer import IIndexer
+from services.indexer.iindexer import IIndexer
 from utils.config import settings
 
 ES_URL = settings.elastic_url

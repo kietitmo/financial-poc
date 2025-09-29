@@ -1,7 +1,7 @@
 import json, re
 from typing import Dict, Any, List
 import google.generativeai as genai
-from domain.iai_client import IAIClient
+from services.ai_client.iai_client import IAIClient
 from utils.config import settings
 
 GEMINI_KEY = settings.google_api_key

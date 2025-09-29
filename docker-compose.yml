@@ -15,7 +15,7 @@ services:
 
   worker:
     build: .
-    command: celery -A infrastructure.celery_app.celery worker --loglevel=info
+    command: celery -A services.async_service.celery_app.celery worker --loglevel=info
     volumes:
       - ./src:/app/src
       - ./tmp:/app/tmp

@@ -1,7 +1,7 @@
 import json
 import openai
 from typing import Dict, Any, List
-from domain.iai_client import IAIClient
+from services.ai_client.iai_client import IAIClient
 from utils.config import settings
 
 OPENAI_KEY = settings.openai_api_key

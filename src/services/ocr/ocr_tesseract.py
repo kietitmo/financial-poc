@@ -1,7 +1,7 @@
 from pdf2image import convert_from_path
 import pytesseract, os
 from typing import List, Dict
-from domain.iocr_service import IOcrService
+from services.ocr.iocr_service import IOcrService
 from utils.config import settings
 
 TESSERACT_CMD = settings.tess_cmd
@@ -20,3 +20,12 @@ class OcrTesseract(IOcrService):
             text = pytesseract.image_to_string(img, lang="vie+eng")
             pages.append({"page": i, "text": text})
         return pages
+
+    def _adjust_text(self, text: str) -> str:
+        lines = text.splitlines()
+        adjusted_lines = []
+        for line in lines:
+            stripped = line.strip()
+            if stripped:
+                adjusted_lines.append(stripped)
+        return "\n".join(adjusted_lines)

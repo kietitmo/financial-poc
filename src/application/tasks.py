@@ -1,11 +1,11 @@
-from infrastructure.celery_app import celery
+from services.async_service.celery_app import celery
 from application.processor import Processor
-from infrastructure.ocr_tesseract import OcrTesseract
-from infrastructure.ai_openai import OpenAIClient
-from infrastructure.ai_gemini import GeminiClient
-from infrastructure.cluster_embedding import EmbeddingClusterer
-from infrastructure.elastic_indexer import ElasticIndexer
-from infrastructure.job_manager_redis import JobManagerRedis
+from services.ocr.ocr_tesseract import OcrTesseract
+from services.ai_client.ai_openai import OpenAIClient
+from services.ai_client.ai_gemini import GeminiClient
+from services.clusterer.cluster_embedding import EmbeddingClusterer
+from services.indexer.elastic_indexer import ElasticIndexer
+from services.async_service.job_manager_redis import JobManagerRedis
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
