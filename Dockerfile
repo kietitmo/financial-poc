@@ -4,6 +4,8 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
+    tesseract-ocr-vie \
+    tesseract-ocr-eng \
     libtesseract-dev \
     libleptonica-dev \
     poppler-utils \
